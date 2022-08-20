@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "name": "Alfreds Futterkiste",
+        "age": "06/12/2000",
+        "sex": "Male",
+        "mobile": "1234567823",
+        "idtype": "Pen Card",
+        "govtid": "PHF3301D",
+        "label": "Father",
+        "gname": "Futterkiste",
+        "email": "Futterkiste@gmail.com",
+        "enumber": "56787543",
+        "addr": "709g/567y naini",
+        "state": "MP",
+        "city": "Kanpur",
+        "country": "india",
+        "pincode": "211005",
+        "blood": "A",
+        "occupation": "Teacher",
+        "religion": "Hindu",
+        "marital": "Marriage",
+        "nationality": "Indian"
+    }
+]

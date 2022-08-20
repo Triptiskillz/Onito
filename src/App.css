@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+.field {
+  padding: 12px 40px;
+  margin: 8px 4px 0 0px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  border-radius: 4px;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.field1 {
+  width: 26%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.field2 {
+  width: 20%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.field3 {
+  width: 24%;
+}
+
+.field4 {
+  padding: 12px 10px;
+  width: 8%;
+}
+
+label {
+  margin: 0 20px 0 10px;
+}
+
+.form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 8%;
+
+}
+
+.button {
+  float: right;
+  padding: 40px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
   color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+
+  cursor: pointer;
+
 }
 
-.App-link {
-  color: #61dafb;
+.btn2 {
+  background-color: #fff;
+  border: 1px solid red;
+  color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin: 0 0 0 50px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  line-height: 2rem;
+}
+
+th {
+  background-color: #dddddd;
+}
+
+b {
+  margin-right: 8px;
+  color: rgb(37, 37, 37);
+  font-size: 16px;
+  letter-spacing: 0.003rem;
+}
+
+i {
+  color: red;
+}
+
+span {
+  color: rgb(80, 79, 79);
+}
+
+.space {
+  margin-left: 5%;
+}
+
+@media (max-width:500px) {
+  .field {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .space {
+    margin-left: 1px;
+  }
+
+  table {
+    width: 100%;
+    margin: 0 0 0 0;
   }
 }
