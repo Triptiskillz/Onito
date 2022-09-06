@@ -6,7 +6,19 @@
   border-radius: 4px;
 
 }
+.filter{
+  border: 1px solid #ddd;
+  outline: none;
 
+  padding: 10px;
+
+}
+.itemS{
+  margin: 20px 0 30px 3%;
+}
+.itemS label{
+  font-size: 19px;
+}
 .field1 {
   width: 26%;
 }
@@ -29,7 +41,7 @@ label {
 }
 
 .form {
-  display: block;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   padding-left: 8%;

@@ -23,6 +23,12 @@ function validateEmail(value) {
 // }
 const App = () => {
   const [contacts, setContacts] = useState(data);
+  const [searchTerm, setSearchTerm] = useState("");
+  const getUser = async () => {
+    fetch(setContacts)
+      .then((res) => res.json())
+      .then();
+  };
   const [addFormData, setAddFormData] = useState({
     name: "",
     age: "",
@@ -325,6 +331,21 @@ const App = () => {
           </div>
         )}
       </Formik>
+      <div className="itemS">
+        {/* <h2>Search Item</h2> */}
+        <form>
+          <label>Search Item :</label><br/><br/>
+          <input
+            className="filter"
+            type="text"
+            placeholder="Search..."
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+            results
+          />
+        </form>
+      </div>
 
       <table>
         <tr>
@@ -334,47 +355,57 @@ const App = () => {
           <th>Other Details</th>
         </tr>
 
-        {contacts.map((items, key) => (
-          <tr>
-            <td>
-              <b>Name:</b> <span>{items.name}</span>
-              <br />
-              <b>Age:</b> <span>{items.age}</span>
-              <br />
-              <b>Sex:</b> <span>{items.sex}</span>
-              <br />
-              <b>Mobile:</b> <span>{items.mobile}</span>
-              <br />
-              <b>ID Type:</b> <span>{items.idtype}</span> <br />
-              <b>Govt ID:</b> <span>{items.govtid}</span>
-            </td>
-            <td>
-              <b>label :</b> <span>{items.label}</span>
-              <br />
-              <b>Guardlian Name:</b> <span>{items.gname}</span>
-              <br />
-              <b>Email :</b> <span>{items.email}</span>
-              <br />
-              <b>Emergency Number :</b> <span>{items.enumber}</span>
-            </td>
-            <td>
-              <b>Address : </b>{" "}
-              <span>
-                {items.addr},{items.state},{items.city},{items.country},
-                {items.pincode}
-              </span>
-            </td>
-            <td>
-              <b>Occupation: </b> <span>{items.blood}</span>
-              <br />
-              <b>Religion: </b> <span>{items.religion}</span>
-              <br />
-              <b>Marital: </b> <span>{items.marital}</span>
-              <br />
-              <b>Nationality</b> <span> {items.nationality}</span>
-            </td>
-          </tr>
-        ))}
+        {contacts
+          .filter((items) => {
+            if (searchTerm == "") {
+              return items;
+            } else if (
+              items.name.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+              return items;
+            }
+          })
+          .map((items, key) => (
+            <tr>
+              <td>
+                <b>Name:</b> <span>{items.name}</span>
+                <br />
+                <b>Age:</b> <span>{items.age}</span>
+                <br />
+                <b>Sex:</b> <span>{items.sex}</span>
+                <br />
+                <b>Mobile:</b> <span>{items.mobile}</span>
+                <br />
+                <b>ID Type:</b> <span>{items.idtype}</span> <br />
+                <b>Govt ID:</b> <span>{items.govtid}</span>
+              </td>
+              <td>
+                <b>label :</b> <span>{items.label}</span>
+                <br />
+                <b>Guardlian Name:</b> <span>{items.gname}</span>
+                <br />
+                <b>Email :</b> <span>{items.email}</span>
+                <br />
+                <b>Emergency Number :</b> <span>{items.enumber}</span>
+              </td>
+              <td>
+                <b>Address : </b>{" "}
+                <span>
+                  {items.addr},{items.state},{items.city},{items.country},
+                  {items.pincode}
+                </span>
+              </td>
+              <td>
+                <b>Occupation: </b> <span>{items.blood}</span>
+                <br />
+                <b>Religion: </b> <span>{items.religion}</span>
+                <br />
+                <b>Marital: </b> <span>{items.marital}</span>
+                <br />
+                <b>Nationality</b> <span> {items.nationality}</span>
+              </td>
+            </tr>
+          ))}
       </table>
     </div>
   );
